@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Nauka Angielskiego Online</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <%= image_tag "britain_img", class: "nav-img" %>
+            <%= link_to "Nauka Angielskiego", root_path, class: 'navbar-brand nav-font-text' %>
+          </div>
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li><%= link_to "O nas", about_path %></li>
+              <li><%= link_to "Serwisy", services_path %></li>
+              <li><%= link_to "Kontakt", contact_path %></li>
+
+              <% if current_user && current_user.user_group.to_s == '1' %>
+                <li><%= link_to "Admin", admin_path %></li>
+              <% end %>
+
+            </ul>
+            <div class="nav-login">
+              <%= current_user ? link_to("Log out", logout_path, method: :delete) + link_to(current_user.login.capitalize, edit_user_path(current_user)) : link_to('Login', login_path) %></div>
+          </div>
+          <!-- /.navbar-collapse -->
+      </div>
+        <!-- /.container -->
+    </nav>
+    <div class="container container-main">
+      <%= yield %>
+    </div>
+
+
+    <div class="footer navbar-fixed-bottom">
+    <small>&#169; Nytorian</small>
+      <div class="footer-links">
+        | <%= link_to "Strona glowna", root_path %>
+        | <%= link_to "O nas", about_path %>
+        | <%= link_to "Serwisy", services_path %>
+        | <%= link_to "Kontakt", contact_path %> | 
+      </div>
+    </div>
+    <!-- jQuery Version 1.11.1 -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<%= form_for(user) do |f| %>
+  <%= f.label :login %>
+  <%= f.text_field :login, class: "sign-up-field" %> <br />
+  <%= f.label :email, "Email Address" %>
+  <%= f.text_field :email, class: "shortInput" %> <br />
+  <%= f.label :password_hash %>
+  <%= f.password_field :password_hash, class: "shortInput" %> <br />
+  <%= f.label :password_confirmation, "Confirm Password" %>
+  <%= f.password_field :password_confirmation, class: "shortInput" %>
+
+  <% if user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

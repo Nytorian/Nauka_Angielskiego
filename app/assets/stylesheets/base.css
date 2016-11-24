@@ -1,0 +1,104 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require bootstrap
+ */
+
+ .container-main {
+  background-color: #f2f2f2;
+  margin-top: 3%;
+  padding-top: 3%;
+  box-shadow: 5px 5px 5px #888888;
+ }
+
+ .nav-img {
+  height: 50px;
+  width: 100px;
+  float: left;
+  margin-right: 20px;
+ }
+
+ .nav-font-text {
+  font-size: 21px;
+ }
+
+ .footer {
+  background-color: #a6a6a6;
+  color: #ffffff;
+ }
+
+ .navbar-fixed-bottom {
+  text-align: center;
+  height: 10%;
+  padding: 10px;
+ }
+
+ .footer-links a:link {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* visited link */
+.footer-links a:visited{
+    color: #ffffff;
+}
+
+/* mouse over link */
+.footer-links a:hover {
+    color: #ccddff;
+    text-decoration: none;
+}
+
+/* selected link */
+.footer-links a:active {
+    color: blue;
+}
+
+.panel-custom {
+  float: left;
+  width: 200px;
+  box-shadow: 5px 5px 5px #888888;
+}
+
+ul.lessons {
+  list-style-type: upper-roman;
+}
+
+.section-main {
+  float: right;
+  text-align: center;
+  margin-right: 10%;
+  margin-left: 20px;
+  margin-top: -15px;
+  width: 800px;
+}
+
+.london-banner {
+  height: 150px;
+  width: 800px;
+  margin-bottom: 10px;
+}
+
+.nav-login > a {
+  float: right;
+  margin: 10px;
+  color:inherit;
+  text-decoration: none;
+  color: #9d9d9d;
+}
+
+.nav-login > a:hover {
+  color: #ffffff;
+}
+
