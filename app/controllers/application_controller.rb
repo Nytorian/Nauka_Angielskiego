@@ -9,12 +9,8 @@ class ApplicationController < ActionController::Base
   end
 
   def admin_auth
-    if current_user
-      unless current_user.user_group.to_s != '1'
-        redirect_to root_path
-      end
-    else
-      redirect_to login_path
+    unless current_user.user_group == 0
+      redirect_to root_path
     end
   end
 end

@@ -1,0 +1,5 @@
+<ul class="nav nav-stacked col-sm-2 ul-admin-panel">
+  <li class="<%= active?('admin' => 'index') %> btn-admin-panel"><%= link_to "Panel administracyjny", admin_path %></li>
+  <li class="<%= active?('admin' => 'add') %> btn-admin-panel"><%= link_to "Dodaj lekcje", root_path %></li>
+  <li class="<%= active?('users' => 'show') %> btn-admin-panel"><%= link_to "Pokaz uzytknownikow", users_path %></li>
+</ul>

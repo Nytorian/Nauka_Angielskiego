@@ -38,7 +38,7 @@
               <li><%= link_to "Serwisy", services_path %></li>
               <li><%= link_to "Kontakt", contact_path %></li>
 
-              <% if current_user && current_user.user_group.to_s == '1' %>
+              <% if current_user && current_user.user_group == 0 %>
                 <li><%= link_to "Admin", admin_path %></li>
               <% end %>
 

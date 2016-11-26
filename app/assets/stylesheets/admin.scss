@@ -1,3 +1,21 @@
 // Place all the styles related to the Admin controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+ul li.active.btn-admin-panel {
+  border-left: 3px solid;
+  border-left-color: black;
+  font-weight: bold;
+  color: black;
+  padding: 0px;
+}
+
+ul li.btn-admin-panel {
+  border: 0.5px solid;
+  border-color: #cccccc;
+  padding: 0px;
+}
+
+.ul-admin-panel{
+  margin-left: -14px;
+}
