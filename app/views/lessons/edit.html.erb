@@ -1,6 +1,9 @@
-<h1>Editing Lesson</h1>
+<%= render 'tabs' %>
+<div class="add-lesson-container">
+  <h1>Editing Lesson</h1>
+  <br>
+  <%= link_to 'Show', @lesson %> |
+  <%= link_to 'Back', lessons_path %>
+  <%= render 'form', lesson: @lesson %>
 
-<%= render 'form', lesson: @lesson %>
-
-<%= link_to 'Show', @lesson %> |
-<%= link_to 'Back', lessons_path %>
+</div>

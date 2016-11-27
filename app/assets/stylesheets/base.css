@@ -102,3 +102,13 @@ ul.lessons {
   color: #ffffff;
 }
 
+.add-lesson-container {
+  float: left;
+  margin: 20px;
+}
+
+.add-expression-container {
+  float: left;
+  margin: 10px 20px 20px 80px;
+}
+

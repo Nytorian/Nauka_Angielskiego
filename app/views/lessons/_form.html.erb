@@ -1,16 +1,4 @@
 <%= form_for(lesson) do |f| %>
-  <% if lesson.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(lesson.errors.count, "error") %> prohibited this lesson from being saved:</h2>
-
-      <ul>
-      <% lesson.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
   <div class="field">
     <%= f.label :name %>
     <%= f.text_field :name %>
@@ -34,4 +22,31 @@
   <div class="actions">
     <%= f.submit %>
   </div>
-<% end %>
+  <div class="add-expression-container">
+    <%= form_for :expressions do |e| %>
+      <div class="field">
+        <%= e.label :title %>
+        <%= e.text_field :title %>
+      </div>
+
+      <div class="field">
+        <%= e.label :english_sntnc %>
+        <%= e.text_field :english_sntnc %>
+      </div>
+
+      <div class="field">
+        <%= e.label :polish_sntnc %>
+        <%= e.text_field :polish_sntnc %>
+      </div>
+
+      <div class="field">
+        <%= e.label :image %>
+        <%= e.text_field :image %>
+      </div>
+
+      <div class="actions">
+        <%= e.submit %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
