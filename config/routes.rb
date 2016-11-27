@@ -16,4 +16,6 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy', as: 'logout'
 
   get '/admin',  to: 'admin#index', as: 'admin'
+
+  get 'expressions/:lesson_id/new', to: 'expressions#new', as: 'lesson_add_expression'
 end

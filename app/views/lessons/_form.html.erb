@@ -11,7 +11,7 @@
 
   <div class="field">
     <%= f.label :content %>
-    <%= f.text_field :content %>
+    <%= f.text_area :content, size: "30x10" %>
   </div>
 
   <div class="field">
@@ -32,12 +32,12 @@
 
         <div class="field">
           <%= e.label :english_sentence %>
-          <%= e.text_field :english_sntnc, :cols => "50", :rows => "50" %>
+          <%= e.text_area :english_sntnc, size: "30x10" %>
         </div>
 
         <div class="field">
           <%= e.label :polish_sentence %>
-          <%= e.text_field :polish_sntnc %>
+          <%= e.text_area :polish_sntnc, size: "30x10" %>
         </div>
 
         <div class="field">

@@ -4,7 +4,19 @@
   </header>
    <ul class="lessons">
     <% @lesson.each do |l| %>
-      <li><%= link_to l.name.to_s, lesson_path(l.id) %></li><hr class="lessons-panel">
+      <% if l.level == 1 %>
+        <li><%= link_to l.name.to_s, lesson_path(l.id) %></li><hr class="lessons-panel">
+      <% end %>
+    <% end %>
+  </ul>
+  <header class="panel-heading">
+   <h5 class="panel-title">Slowka</h5>
+  </header>
+   <ul class="lessons">
+    <% @lesson.each do |l| %>
+      <% if l.level == 2 %>
+        <li><%= link_to l.name.to_s, lesson_path(l.id) %></li><hr class="lessons-panel">
+      <% end %>
     <% end %>
   </ul>
   <header class="panel-heading">

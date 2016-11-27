@@ -1,15 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong><%= @lesson.name %></strong> (<%= @lesson.content %>
-)
+<p align="center">
+  <strong><%= @lesson.name %></strong><%= '(' + @lesson.content + ')' unless @lesson.content.empty? %>
   <br>Level: <%= @lesson.level %>
 </p>
 
 <p>
   <% @lesson.expression.each do |e| %>
-    <%= e.english_sntnc %><br>
-    <%= e.polish_sntnc %><br><br>
+    <%= e.english_sntnc.html_safe %><br>
+    <%= e.polish_sntnc.html_safe %><br><br>
   <% end %>
 </p>
 

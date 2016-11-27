@@ -5,10 +5,11 @@
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Level</th>
-      <th>Content</th>
-      <th>Image</th>
+      <th>Nazwa</th>
+      <th>&nbsp;Poziom</th>
+      <th>&nbsp;Krotki Opis</th>
+      <th>&nbsp;Zdjecie URL</th>
+      <th>&nbsp;Kategoria</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,9 +21,17 @@
         <td><%= lesson.level %></td>
         <td><%= lesson.content %></td>
         <td><%= lesson.image %></td>
-        <td><%= link_to 'Show', lesson %></td>
-        <td><%= link_to 'Edit', edit_lesson_path(lesson) %></td>
-        <td><%= link_to 'Destroy', lesson, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% case lesson.level %>
+          <% when 1 %>
+            <td>Lekce podstawowe</td>
+          <% when 2 %>
+            <td>Slowka</td>
+          <% when 3 %>
+            <td>Dialogi</td>
+        <% end %>
+        <td><%= link_to 'Pokaz', lesson %></td>
+        <td><%= link_to 'Edytuj', edit_lesson_path(lesson) %></td>
+        <td><%= link_to 'Usun', lesson, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +39,4 @@
 
 <br>
 
-<%= link_to 'New Lesson', new_lesson_path %>
+<%= link_to 'Nowa lekcja', new_lesson_path %>

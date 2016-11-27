@@ -2,11 +2,11 @@
 <div class="add-lesson-container">
   <h1>Editing Lesson</h1>
   <br>
-  <%= link_to 'Show', @lesson %> |
-  <%= link_to 'Back', lessons_path %>
+  <%= link_to 'Pokaz', @lesson %> |
+  <%= link_to 'Wroc', lessons_path %>
 
   <%= render 'form', lesson: @lesson %>
   <br>
-  <%= link_to 'Dodaj zdanie', new_expression_path %>
+  <%= link_to 'Dodaj zdanie', lesson_add_expression_path(@lesson.id) %>
 
 </div>

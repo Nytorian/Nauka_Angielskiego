@@ -17,18 +17,18 @@
   </div>
 
   <div class="field">
-    <%= f.label :english_sntnc %>
-    <%= f.text_field :english_sntnc %>
+    <%= f.label :zdanie_po_angielsku %>
+    <%= f.text_area :english_sntnc %>
   </div>
 
   <div class="field">
-    <%= f.label :polish_sntnc %>
-    <%= f.text_field :polish_sntnc %>
+    <%= f.label :zdanie_po_polsku %>
+    <%= f.text_area :polish_sntnc %>
   </div>
 
   <div class="field">
     <%= f.label :lesson_id %>
-    <%= f.text_field :lesson_id %>
+    <%= f.text_field :lesson_id, value: params[:lesson_id] %>
   </div>
 
   <div class="field">
