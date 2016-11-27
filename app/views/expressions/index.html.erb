@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Expressions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>English sntnc</th>
+      <th>Polish sntnc</th>
+      <th>Lesson</th>
+      <th>Audio en</th>
+      <th>Audio pl</th>
+      <th>Image</th>
+      <th>Premium</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @expressions.each do |expression| %>
+      <tr>
+        <td><%= expression.title %></td>
+        <td><%= expression.english_sntnc %></td>
+        <td><%= expression.polish_sntnc %></td>
+        <td><%= expression.lesson %></td>
+        <td><%= expression.audio_en %></td>
+        <td><%= expression.audio_pl %></td>
+        <td><%= expression.image %></td>
+        <td><%= expression.premium %></td>
+        <td><%= link_to 'Show', expression %></td>
+        <td><%= link_to 'Edit', edit_expression_path(expression) %></td>
+        <td><%= link_to 'Destroy', expression, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Expression', new_expression_path %>

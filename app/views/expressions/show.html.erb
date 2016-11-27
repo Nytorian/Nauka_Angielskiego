@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @expression.title %>
+</p>
+
+<p>
+  <strong>English sntnc:</strong>
+  <%= @expression.english_sntnc %>
+</p>
+
+<p>
+  <strong>Polish sntnc:</strong>
+  <%= @expression.polish_sntnc %>
+</p>
+
+<p>
+  <strong>Lesson:</strong>
+  <%= @expression.lesson %>
+</p>
+
+<p>
+  <strong>Audio en:</strong>
+  <%= @expression.audio_en %>
+</p>
+
+<p>
+  <strong>Audio pl:</strong>
+  <%= @expression.audio_pl %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @expression.image %>
+</p>
+
+<p>
+  <strong>Premium:</strong>
+  <%= @expression.premium %>
+</p>
+
+<%= link_to 'Edit', edit_expression_path(@expression) %> |
+<%= link_to 'Back', expressions_path %>

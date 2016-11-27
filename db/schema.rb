@@ -10,7 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161123165845) do
+ActiveRecord::Schema.define(version: 20161127175926) do
+
+  create_table "expressions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "title"
+    t.string   "english_sntnc"
+    t.string   "polish_sntnc"
+    t.integer  "lesson_id"
+    t.string   "audio_en"
+    t.string   "audio_pl"
+    t.string   "image"
+    t.boolean  "premium"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["lesson_id"], name: "index_expressions_on_lesson_id", using: :btree
+  end
+
+  create_table "lessons", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name"
+    t.integer  "level"
+    t.string   "content"
+    t.string   "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.datetime "created_at",                null: false
@@ -24,4 +47,5 @@ ActiveRecord::Schema.define(version: 20161123165845) do
     t.integer  "user_group",    default: 1
   end
 
+  add_foreign_key "expressions", "lessons"
 end

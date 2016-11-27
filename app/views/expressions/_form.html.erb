@@ -1,0 +1,57 @@
+<%= form_for(expression) do |f| %>
+  <% if expression.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(expression.errors.count, "error") %> prohibited this expression from being saved:</h2>
+
+      <ul>
+      <% expression.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :english_sntnc %>
+    <%= f.text_field :english_sntnc %>
+  </div>
+
+  <div class="field">
+    <%= f.label :polish_sntnc %>
+    <%= f.text_field :polish_sntnc %>
+  </div>
+
+  <div class="field">
+    <%= f.label :lesson_id %>
+    <%= f.text_field :lesson_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :audio_en %>
+    <%= f.text_field :audio_en %>
+  </div>
+
+  <div class="field">
+    <%= f.label :audio_pl %>
+    <%= f.text_field :audio_pl %>
+  </div>
+
+  <div class="field">
+    <%= f.label :image %>
+    <%= f.text_field :image %>
+  </div>
+
+  <div class="field">
+    <%= f.label :premium %>
+    <%= f.check_box :premium %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
