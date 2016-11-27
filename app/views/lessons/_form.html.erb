@@ -1,4 +1,4 @@
-<%= form_for(lesson) do |f| %>
+<%= form_for lesson do |f| %>
   <div class="field">
     <%= f.label :name %>
     <%= f.text_field :name %>
@@ -23,30 +23,32 @@
     <%= f.submit %>
   </div>
   <div class="add-expression-container">
-    <%= form_for :expressions do |e| %>
-      <div class="field">
-        <%= e.label :title %>
-        <%= e.text_field :title %>
-      </div>
+    <% lesson.expression.each do |ex| %>
+      <%= form_for ex do |e| %>
+        <div class="field">
+          <%= e.label :title %>
+          <%= e.text_field :title %>
+        </div>
 
-      <div class="field">
-        <%= e.label :english_sntnc %>
-        <%= e.text_field :english_sntnc %>
-      </div>
+        <div class="field">
+          <%= e.label :english_sentence %>
+          <%= e.text_field :english_sntnc, :cols => "50", :rows => "50" %>
+        </div>
 
-      <div class="field">
-        <%= e.label :polish_sntnc %>
-        <%= e.text_field :polish_sntnc %>
-      </div>
+        <div class="field">
+          <%= e.label :polish_sentence %>
+          <%= e.text_field :polish_sntnc %>
+        </div>
 
-      <div class="field">
-        <%= e.label :image %>
-        <%= e.text_field :image %>
-      </div>
+        <div class="field">
+          <%= e.label :image %>
+          <%= e.text_field :image %>
+        </div>
 
-      <div class="actions">
-        <%= e.submit %>
-      </div>
+        <div class="actions">
+          <%= e.submit %>
+        </div>
+      <% end %>
     <% end %>
   <% end %>
 </div>

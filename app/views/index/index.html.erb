@@ -1,14 +1,22 @@
 <section class="panel panel-default panel-custom">
   <header class="panel-heading">
-   <h5 class="panel-title">Bezplatne lekcje</h5>
+   <h5 class="panel-title">Lekcje Podstawowe</h5>
   </header>
-  <div class="panel-body">
    <ul class="lessons">
     <% @lesson.each do |l| %>
-      <li><%= link_to l.name.to_s, lesson_path(l.id) %></li>
+      <li><%= link_to l.name.to_s, lesson_path(l.id) %></li><hr class="lessons-panel">
     <% end %>
   </ul>
-  </div>
+  <header class="panel-heading">
+   <h5 class="panel-title">Dialogi</h5>
+  </header>
+   <ul class="lessons">
+    <% @lesson.each do |l| %>
+      <% if l.level == 3 %>
+        <li><%= link_to l.name.to_s, lesson_path(l.id) %></li><hr class="lessons-panel">
+      <% end %>
+    <% end %>
+  </ul>
 </section>
 <div class="section-main">
     <h3>Bezpłatny kurs języka angielskiego online</h3>

@@ -1,24 +1,19 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
-  <%= @lesson.name %>
+  <strong><%= @lesson.name %></strong> (<%= @lesson.content %>
+)
+  <br>Level: <%= @lesson.level %>
 </p>
 
 <p>
-  <strong>Level:</strong>
-  <%= @lesson.level %>
+  <% @lesson.expression.each do |e| %>
+    <%= e.english_sntnc %><br>
+    <%= e.polish_sntnc %><br><br>
+  <% end %>
 </p>
 
-<p>
-  <strong>Content:</strong>
-  <%= @lesson.content %>
-</p>
-
-<p>
-  <strong>Image:</strong>
-  <%= @lesson.image %>
-</p>
-
-<%= link_to 'Edit', edit_lesson_path(@lesson) %> |
-<%= link_to 'Back', lessons_path %>
+<% if current_user && current_user.user_group == 0 %>
+  <%= link_to 'Edit', edit_lesson_path(@lesson) %> |
+  <%= link_to 'Back', lessons_path %>
+<% end %>
