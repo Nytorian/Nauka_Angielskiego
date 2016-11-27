@@ -9,7 +9,14 @@ class ApplicationController < ActionController::Base
   end
 
   def admin_auth
-    unless current_user.user_group == 0 || !current_user.nil?
+    unless current_user.user_group.to_s == '0' && !current_user.nil?
+      redirect_to root_path
+    end
+  end
+
+  def validate_content
+    unless current_user.id.to_s == params[:id].to_s
+      flash[:notice] = "Mozesz edytowac tylko swojego uzytkownika"
       redirect_to root_path
     end
   end

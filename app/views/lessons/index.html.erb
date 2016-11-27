@@ -1,6 +1,7 @@
+<%= render 'admin/tabs' %>
 <p id="notice"><%= notice %></p>
 
-<h1>Lessons</h1>
+<h1>Wszystkie Lekcje</h1><br>
 
 <table>
   <thead>
@@ -28,6 +29,8 @@
             <td>Slowka</td>
           <% when 3 %>
             <td>Dialogi</td>
+          <% else %>
+            <td>N/A</td>
         <% end %>
         <td><%= link_to 'Pokaz', lesson %></td>
         <td><%= link_to 'Edytuj', edit_lesson_path(lesson) %></td>

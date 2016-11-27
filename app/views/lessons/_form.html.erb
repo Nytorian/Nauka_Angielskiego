@@ -1,21 +1,21 @@
 <%= form_for lesson do |f| %>
   <div class="field">
-    <%= f.label :name %>
+    <%= f.label :nazwa %>
     <%= f.text_field :name %>
   </div>
 
   <div class="field">
-    <%= f.label :level %>
+    <%= f.label :poziom %>
     <%= f.text_field :level %>
   </div>
 
   <div class="field">
-    <%= f.label :content %>
+    <%= f.label :krotki_opis %>
     <%= f.text_area :content, size: "30x10" %>
   </div>
 
   <div class="field">
-    <%= f.label :image %>
+    <%= f.label :obraz_url %>
     <%= f.text_field :image %>
   </div>
 
@@ -26,22 +26,22 @@
     <% lesson.expression.each do |ex| %>
       <%= form_for ex do |e| %>
         <div class="field">
-          <%= e.label :title %>
+          <%= e.label :tytul %>
           <%= e.text_field :title %>
         </div>
 
         <div class="field">
-          <%= e.label :english_sentence %>
+          <%= e.label :zdanie_po_angielsku %>
           <%= e.text_area :english_sntnc, size: "30x10" %>
         </div>
 
         <div class="field">
-          <%= e.label :polish_sentence %>
+          <%= e.label :zdanie_po_polsku %>
           <%= e.text_area :polish_sntnc, size: "30x10" %>
         </div>
 
         <div class="field">
-          <%= e.label :image %>
+          <%= e.label :obraz_url %>
           <%= e.text_field :image %>
         </div>
 

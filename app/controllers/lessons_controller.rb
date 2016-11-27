@@ -1,6 +1,6 @@
 class LessonsController < ApplicationController
   before_action :set_lesson, only: [:show, :edit, :update, :destroy]
-  before_filter :admin_auth, only: [:index, :show, :edit, :update, :destroy]
+  before_filter :admin_auth, only: [:index, :destroy, :new, :show, :new]
 
   # GET /lessons
   # GET /lessons.json
