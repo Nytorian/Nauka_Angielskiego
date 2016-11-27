@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   end
 
   def admin_auth
-    unless current_user.user_group == 0
+    unless current_user.user_group == 0 || !current_user.nil?
       redirect_to root_path
     end
   end
