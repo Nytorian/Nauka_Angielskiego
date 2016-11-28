@@ -39,6 +39,11 @@
           <%= e.label :zdanie_po_polsku %>
           <%= e.text_area :polish_sntnc, size: "30x10" %>
         </div>
+        
+        <div class="field">
+          <%= e.label :obraz_url, "Wrzuc plik glosowy po angielsku" %>
+          <%= e.file_field :audio_en %>
+        </div>
 
         <div class="field">
           <%= e.label :obraz_url %>
