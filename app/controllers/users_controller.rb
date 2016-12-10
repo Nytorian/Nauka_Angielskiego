@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:show, :edit, :update, :destroy, :create]
   before_filter :admin_auth, only: [:index, :destroy, :new, :show]
   before_filter :validate_content, only: [:edit, :update]
 

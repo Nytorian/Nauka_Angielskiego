@@ -6,12 +6,14 @@
 </p>
 
 <p>
-  <% @lesson.expression.each do |e| %>
-    <%= e.english_sntnc.html_safe %><br>
+  <% @lesson.expression.each_with_index do |e, i| %>
+    <div class="sentence" id="sentence_<%= i %>" data-id="<%= i %>" flag="0"><%= e.english_sntnc.html_safe %></div>
+    <div id="sentence_en_<%= i %>" style="visibility: hidden"><%= e.english_sntnc.html_safe %></div>
+    <div id="sentence_pl_<%= i %>" style="visibility: hidden"><%= e.polish_sntnc.html_safe %></div>
+    <br>
     <audio src="<%= audio_path 'jean.mp3'%>" type="audio/mpeg" controls>
       Your browser does not support the audio element.
     </audio><br><br>
-    <%= e.polish_sntnc.html_safe %><br><br>
   <% end %>
 </p>
 
