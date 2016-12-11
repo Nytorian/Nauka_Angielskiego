@@ -18,7 +18,7 @@
 
 $(document).ready(function() {
 
- $(".sentence").hover(function (){
+  $(".sentence").hover(function (){
     var flag = $(this).attr('flag');
 
     $(this).attr('flag', flag == '0' ? '1' : '0');
@@ -26,9 +26,14 @@ $(document).ready(function() {
     var sentence_pl =  $("#sentence_pl_" + $(this).data('id')).text();
 
     $(this).stop().css('opacity', '0').html(function (_, oldText) { // Set the opacity of the div to 0 and then change the html (flip it based on last value)
-        return flag == '0' ? sentence_en : sentence_pl
+        return flag == '0' ? sentence_pl : sentence_en
     }).animate({
         opacity: 1 // Animate opacity to 1 with a duration of 2 sec
-    }, 400);
+    }, 600);
 });
+  // $(".sentence").click(function(){
+  //   var audio = new Audio();
+  //   audio.src ="http://translate.coogle.com/translate_tts?ie=UTF-&&q=" + text + "&tl=en";
+  //   audio.play();
+  // });
 });
