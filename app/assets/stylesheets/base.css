@@ -15,12 +15,34 @@
  *= require bootstrap
  */
 
+ #notice{
+  text-align: center;
+ }
+
+.admin-controlers{
+  text-align: center;
+ }
+
+.lesson_table{
+  margin-left: 30px;
+}
+
+div.sentence {
+  cursor: pointer;
+  padding: 20px 5px 20px 20px;
+}
+
+.expression-tag {
+  display:inline-block;
+}
+
  .container-main {
   background-color: #f2f2f2;
   margin-top: 25px;
   margin-bottom: 70px;
   padding-top: 25px;
   box-shadow: 5px 5px 5px #888888;
+  min-width: 300px;
  }
 
  .nav-img {
@@ -81,15 +103,15 @@ ul.lessons {
 .section-main {
   float: right;
   text-align: center;
-  margin-right: 10%;
-  margin-left: 20px;
-  margin-top: -15px;
-  width: 800px;
+  margin: 20px 50px 20px 0px;
+  max-width: 800px;
 }
 
 .london-banner {
   height: 150px;
   width: 800px;
+  min-width: 50%;
+  float: right;
   margin-bottom: 10px;
 }
 

@@ -1,45 +1,47 @@
-<section class="panel panel-default panel-custom">
-  <header class="panel-heading">
-   <h5 class="panel-title">Lekcje Podstawowe</h5>
-  </header>
-   <ul class="lessons">
-    <% @lesson.each do |l| %>
-      <% if l.level == 1 %>
-        <li><%= link_to l.name.to_s, lesson_path(l.id) %></li><hr class="lessons-panel">
+<div class="panel-custom">
+  <section class="panel panel-default">
+    <header class="panel-heading">
+     <h5 class="panel-title">Lekcje Podstawowe</h5>
+    </header>
+     <ul class="lessons">
+      <% @lesson.each do |l| %>
+        <% if l.level == 1 %>
+          <li><%= link_to l.name.to_s, lesson_path(l.id) %></li><hr class="lessons-panel">
+        <% end %>
       <% end %>
-    <% end %>
-  </ul>
-  <header class="panel-heading">
-   <h5 class="panel-title">Slowka</h5>
-  </header>
-   <ul class="lessons">
-    <% @lesson.each do |l| %>
-      <% if l.level == 2 %>
-        <li><%= link_to l.name.to_s, lesson_path(l.id) %></li><hr class="lessons-panel">
+    </ul>
+    <header class="panel-heading">
+     <h5 class="panel-title">Slowka</h5>
+    </header>
+     <ul class="lessons">
+      <% @lesson.each do |l| %>
+        <% if l.level == 2 %>
+          <li><%= link_to l.name.to_s, lesson_path(l.id) %></li><hr class="lessons-panel">
+        <% end %>
       <% end %>
-    <% end %>
-  </ul>
-  <header class="panel-heading">
-   <h5 class="panel-title">Czasy</h5>
-  </header>
-   <ul class="lessons">
-    <% @lesson.each do |l| %>
-      <% if l.level == 3 %>
-        <li><%= link_to l.name.to_s, lesson_path(l.id) %></li><hr class="lessons-panel">
+    </ul>
+    <header class="panel-heading">
+     <h5 class="panel-title">Czasy</h5>
+    </header>
+     <ul class="lessons">
+      <% @lesson.each do |l| %>
+        <% if l.level == 3 %>
+          <li><%= link_to l.name.to_s, lesson_path(l.id) %></li><hr class="lessons-panel">
+        <% end %>
       <% end %>
-    <% end %>
-  </ul>
-  <header class="panel-heading">
-   <h5 class="panel-title">Dialgi</h5>
-  </header>
-   <ul class="lessons">
-    <% @lesson.each do |l| %>
-      <% if l.level == 4 %>
-        <li><%= link_to l.name.to_s, lesson_path(l.id) %></li><hr class="lessons-panel">
+    </ul>
+    <header class="panel-heading">
+     <h5 class="panel-title">Dialgi</h5>
+    </header>
+     <ul class="lessons">
+      <% @lesson.each do |l| %>
+        <% if l.level == 4 %>
+          <li><%= link_to l.name.to_s, lesson_path(l.id) %></li><hr class="lessons-panel">
+        <% end %>
       <% end %>
-    <% end %>
-  </ul>
-</section>
+    </ul>
+  </section>
+</div>
 <div class="section-main">
     <h3>Bezpłatny kurs języka angielskiego online</h3>
     <%= image_tag "City_of_London_banner", class: "london-banner" %>
