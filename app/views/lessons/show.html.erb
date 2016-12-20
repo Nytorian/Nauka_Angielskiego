@@ -5,19 +5,38 @@
   <br>Level: <%= @lesson.level %>
 </p>
 
-<p>
+<table class="lesson_table">
+<tbody>
   <% @lesson.expression.each_with_index do |e, i| %>
-    <div class="sentence" id="sentence_<%= i %>" data-id="<%= i %>" flag="0"><%= e.english_sntnc.html_safe %></div>
-    <div id="sentence_en_<%= i %>" style="visibility: hidden"><%= e.english_sntnc.html_safe %></div>
-    <div id="sentence_pl_<%= i %>" style="visibility: hidden"><%= e.polish_sntnc.html_safe %></div>
-    <br>
-    <audio src="<%= audio_path 'jean.mp3'%>" type="audio/mpeg" controls>
-      Your browser does not support the audio element.
-    </audio><br><br>
+
+    <% unless i % 3 == 0 %>
+     <% put_tr = true %>
+    <% else %>
+      <% put_tr = false %>
+    <% end %>
+
+    <% unless put_tr %>
+      <tr>
+    <% end %>
+    <td>
+      <div class="sentence" id="sentence_<%= i %>" data-id="<%= i %>" flag="0"><%= e.english_sntnc.html_safe %></div>
+      <div id="sentence_en_<%= i %>" style="visibility: hidden"><%= e.english_sntnc.html_safe %></div>
+      <div id="sentence_pl_<%= i %>" style="visibility: hidden"><%= e.polish_sntnc.html_safe %></div>
+      <br>
+      <audio src="<%= audio_path 'jean.mp3'%>" type="audio/mpeg" controls>
+        Your browser does not support the audio element.
+      </audio><br><br>
+    </td>
+    <% unless put_tr %>
+      </tr>
+    <% end %>
   <% end %>
-</p>
+</tbody>
+</table>
 
 <% if current_user && current_user.user_group == 0 %>
-  <%= link_to 'Edytuj', edit_lesson_path(@lesson) %> |
-  <%= link_to 'Wroc', lessons_path %>
+  <div class="admin-controlers">
+    <%= link_to 'Edytuj', edit_lesson_path(@lesson) %> |
+    <%= link_to 'Wroc', lessons_path %>
+  </div>
 <% end %>
