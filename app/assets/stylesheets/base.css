@@ -24,7 +24,16 @@
  }
 
 .lesson_table{
-  margin-left: 30px;`
+  margin-left: 30px;
+}
+
+div.sentence {
+  cursor: pointer;
+  padding: 20px 5px 20px 20px;
+}
+
+.expression-tag {
+  display:inline-block;
 }
 
  .container-main {
