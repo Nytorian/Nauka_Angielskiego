@@ -23,8 +23,12 @@
   text-align: center;
  }
 
-.lesson_table{
+.lesson-table{
   margin-left: 30px;
+}
+
+td.lesson-table-td {
+  width: 40%;
 }
 
 div.sentence {
